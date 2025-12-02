@@ -1,24 +1,28 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import './App.css'
 
-
-import UserRegister from './user/register/UserRegister.jsx'
-import UserLogin from './user/login/userLogin.jsx' 
 import App from './App.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+// import CreateTask from './pages/CreateTask.jsx';
+// import EditTask from './pages/EditTask.jsx';
+import TaskDashboard from './pages/Dashboard/TaskDashboard.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
 
-<ToastContainer position='top-right' autoClose={3000} theme='dark'/>
 
           <Routes>
-            <Route path="/" element={<App/>}/>
-            <Route path="/login" element={<UserLogin />} />
-            <Route path="/register" element={<UserRegister />} />
+            <Route path="/app" element={<App/>}/>
+            <Route path="/" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            {/* <Route path="/addtask" element={<CreateTask/>}/> */}
+            {/* <Route path="/edittask" element={<EditTask/>}/> */}
+            <Route path="/dashboard" element={<TaskDashboard/>}/>
+             
             
           </Routes>
           
